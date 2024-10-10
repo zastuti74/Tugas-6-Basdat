@@ -1,0 +1,27 @@
+CREATE TABLE Mahasiswa (
+    NIM VARCHAR(10) PRIMARY KEY,
+    Nama VARCHAR(50),
+    Prodi VARCHAR(50)
+);
+
+
+INSERT INTO Mahasiswa (NIM, Nama, Prodi) 
+VALUES 
+('A001', 'AB', 'INF','10'),
+('A002', 'BC', 'SI','20'),
+('A003', 'C', 'ARS','15'),
+('A004', 'D', 'INF','30'),
+('A005, 'E', 'INF','10'),
+('A006, 'F', 'TSP','25'),
+('A007, 'G', 'ARS','15'),
+('A008, 'H, 'SI','10');
+
+
+SELECT prodi, COUNT(prodi) AS jml_mhs
+FROM mahasiswa
+GROUP BY prodi
+HAVING COUNT(prodi) >= 2;
+
+SELECT Prodi, COUNT(*) AS Jumlah_Mahasiswa
+FROM Mahasiswa
+GROUP BY Prodi;
